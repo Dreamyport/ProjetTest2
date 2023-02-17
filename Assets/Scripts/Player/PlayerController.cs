@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement")]
-    [SerializeField] private float moveSpeed = 5f;
+    // Attributs
+
+    private float _vitesse = 10f;
 
     private void Start()
     {
@@ -19,10 +20,15 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        float xPos = Input.GetAxis("Horizontal");
-        float zPos = Input.GetAxis("Vertical");
+        float PositionX = Input.GetAxis("Horizontal");
+        float PositionZ = Input.GetAxis("Vertical");
 
-        Vector3 direction = new Vector3(xPos, 0f, zPos);
-        transform.Translate(direction * Time.deltaTime * moveSpeed);
+        Vector3 direction = new Vector3(PositionX, 0f, PositionZ);
+        transform.Translate(direction * Time.deltaTime * _vitesse);
+
+        //Debug.Log(PositionX + " , " + PositionY);
+
+        //Vector3 direction = new Vector3(xPos, 0f, zPos);
+       // transform.Translate(direction * Time.deltaTime * moveSpeed);
     }
 }
