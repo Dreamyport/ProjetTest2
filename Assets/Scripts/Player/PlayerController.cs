@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         // Position initiale du joueur.
-        transform.position = new Vector3(-12f, 0.5f, -12f);
+        transform.position = new Vector3(-12f, 0f, -12f);
     }
     private void Update()
     {
